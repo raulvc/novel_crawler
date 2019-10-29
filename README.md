@@ -20,11 +20,11 @@ Simple text crawler for fetching novel chapters.
 pip install venv
 
 # Set your cwd to project's folder
-$ cd novel_crawler
+cd novel_crawler
 
 # use virtual env
-$ virtualenv -p $(which python3) .
-$ source venv/bin/activate 
+virtualenv -p $(which python3) .
+source venv/bin/activate 
 
 # install deps
 pip install -r requirements.txt
@@ -33,13 +33,13 @@ pip install -r requirements.txt
 ## Running
 ```bash
 # Set your cwd to project's folder
-$ cd novel_crawler
+cd novel_crawler
 
-$ source venv/bin/activate
+source venv/bin/activate
 
-$ (venv) python3 main.py -i "http://novelfull.com/everyone-else-is-a-returnee/prologue-part-1.html" -o ~/ebooks/everyone_else_is_a_returnee.txt -a y
+(venv) python3 main.py -i "http://novelfull.com/everyone-else-is-a-returnee/prologue-part-1.html" -o ~/ebooks/everyone_else_is_a_returnee.txt -a y
 
 # NOTE: may take a long time
 # there's also no logging by default, I would go around that by using tail:
-$ tail -f ~/ebooks/everyone_else_is_a_returnee.txt | grep Chapter
+tail -f ~/ebooks/everyone_else_is_a_returnee.txt | grep Chapter
 ```
