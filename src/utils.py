@@ -1,6 +1,5 @@
-import shutil  # NOTE: python >= 3.3
-
 from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
 
 from src.consts import DEFAULT_TIMEOUT
 
@@ -10,17 +9,6 @@ def get_driver():
     options = webdriver.ChromeOptions()
     # using headless mode for better performance
     options.add_argument('--headless')
-    driver = webdriver.Chrome(get_chromedriver_path(), chrome_options=options)
+    driver = webdriver.Chrome(ChromeDriverManager().install(), chrome_options=options)
     driver.implicitly_wait(DEFAULT_TIMEOUT)
     return driver
-
-
-def get_chromedriver_path():
-    # finds out path of chromedriver (just like the 'which' command in linux systems)
-    bin_names = ['chromedriver-dev', 'chromedriver']  # uses dev channel of the driver package if available
-    path = ''
-    for bin_name in bin_names:
-        path = shutil.which(bin_name)
-        if path:
-            break
-    return path

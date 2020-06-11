@@ -1,2 +1,7 @@
 # Project exclude paths
-/venv/
+venv
+.idea
+bin
+lib
+pyvenv.cfg
+__pycache__/
