@@ -1,8 +1,8 @@
 import argparse
 import os
 
-from src.novel_crawler import NovelCrawler
-
+from src.novel_full_crawler import NovelFullCrawler
+from src.royalroad_crawler import RoyalRoadCrawler
 
 def str2bool(v):
     # https://stackoverflow.com/questions/15008758/parsing-boolean-values-with-argparse
@@ -28,5 +28,11 @@ def parse_args():
 
 if __name__ == '__main__':
     args = parse_args()
-    nc = NovelCrawler(start_url=args.initial_page, output=args.out, append=args.append)
-    nc.run()
+
+    initial_page = args.initial_page
+    if "royalroad" in initial_page:
+        RoyalRoadCrawler(start_url=args.initial_page, output=args.out, append=args.append).run()
+    elif "novelfull" in initial_page:
+        NovelFullCrawler(start_url=args.initial_page, output=args.out, append=args.append).run()
+    else:
+        print("website unsupported")
