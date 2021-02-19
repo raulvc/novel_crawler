@@ -4,6 +4,7 @@ import os
 from src.novel_full_crawler import NovelFullCrawler
 from src.royalroad_crawler import RoyalRoadCrawler
 
+
 def str2bool(v):
     # https://stackoverflow.com/questions/15008758/parsing-boolean-values-with-argparse
     if isinstance(v, bool):
