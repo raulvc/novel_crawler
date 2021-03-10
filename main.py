@@ -3,6 +3,7 @@ import os
 
 from src.novel_full_crawler import NovelFullCrawler
 from src.royalroad_crawler import RoyalRoadCrawler
+from src.oppa_crawler import OppaCrawler
 
 
 def str2bool(v):
@@ -35,5 +36,7 @@ if __name__ == '__main__':
         RoyalRoadCrawler(start_url=args.initial_page, output=args.out, append=args.append).run()
     elif "novelfull" in initial_page:
         NovelFullCrawler(start_url=args.initial_page, output=args.out, append=args.append).run()
+    elif "oppatranslations" in initial_page:
+        OppaCrawler(start_url=args.initial_page, output=args.out, append=args.append).run()
     else:
         print("website unsupported")

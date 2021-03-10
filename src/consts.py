@@ -1,1 +1,1 @@
-DEFAULT_TIMEOUT = 30  # 30s timeout for selenium requests
+DEFAULT_TIMEOUT = 90  # 90s timeout for selenium requests
